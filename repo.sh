@@ -12,17 +12,23 @@ bzip2 -c9 Packages > Packages.bz2
 
 echo "[Repository] Generating Release..."
 apt-ftparchive \
-		-o APT::FTPArchive::Release::Origin="Sileo" \
-		-o APT::FTPArchive::Release::Label="Sileo" \
+		-o APT::FTPArchive::Release::Origin="Iyue" \
+		-o APT::FTPArchive::Release::Label="Iyue" \
 		-o APT::FTPArchive::Release::Suite="stable" \
-		-o APT::FTPArchive::Release::Version="2.0" \
+		-o APT::FTPArchive::Release::Version="1.0" \
 		-o APT::FTPArchive::Release::Codename="ios" \
 		-o APT::FTPArchive::Release::Architectures="iphoneos-arm iphoneos-arm64" \
 		-o APT::FTPArchive::Release::Components="main" \
-		-o APT::FTPArchive::Release::Description="Sileo for Checkra1n and Unc0ver" \
+		-o APT::FTPArchive::Release::Description="Iyue for sileo Repo" \
 		release . > Release
 
 echo "[Repository] Signing Release using Amy's GPG Key..."
-gpg -abs -u 816C7A50B575162DC29288CD72339224580758CE -o Release.gpg Release
+if gpg -abs -u 767D46A4709E4297AEDD4F0783BBBE5ADBD940CB -o Release.gpg Release 2>/dev/null; then
+    echo "[Repository] Release signed successfully."
+else
+    echo "[Repository] Warning: GPG signing failed. No secret key found. Continuing without signature."
+    # 创建一个空的Release.gpg文件作为占位符
+    touch Release.gpg
+fi
 
 echo "[Repository] Finished"
