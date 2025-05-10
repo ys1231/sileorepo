@@ -1,4 +1,23 @@
 Package: re.frida.server
+Architecture: appletvos-arm64
+Version: 16.7.14
+Priority: optional
+Section: Development
+Maintainer: Ole André Vadla Ravnås <oleavr@nowsecure.com>
+Installed-Size: 26556
+Conflicts: re.frida.server64
+Filename: ./pool/frida_16.7.14_appletvos-arm64.deb
+Size: 8457796
+MD5sum: 773ae39d7774ee99f54ab6d81e18c6f7
+SHA1: 6719ffa85f9f6b55ce21eecf17a9afad6bc13276
+SHA256: fc2ea03be44279ab298b86232a55190314643372021a5241d36947bb4b4b6c68
+SHA512: 6012d1324099ab227518d8c80e2104b563a5d66ccaca1c5bd15524c7d8ba6fa69ce893471bf6ca9bb07b1424619300a3daa8067b1bec963498f067e8193929dc
+Homepage: https://frida.re/
+Description: Observe and reprogram running programs.
+Name: Frida
+Author: Frida Developers <oleavr@nowsecure.com>
+
+Package: re.frida.server
 Architecture: iphoneos-arm
 Version: 16.7.14
 Priority: optional

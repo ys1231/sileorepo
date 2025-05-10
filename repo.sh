@@ -5,7 +5,7 @@ cd $script_full_path || exit 1
 rm Packages Packages.bz2 Packages.xz Packages.zst Release Release.gpg
 
 echo "[Repository] Generating Packages..."
-apt-ftparchive packages ./pool > Packages
+apt-ftparchive packages pool > Packages
 zstd -q -c19 Packages > Packages.zst
 xz -c9 Packages > Packages.xz
 bzip2 -c9 Packages > Packages.bz2
