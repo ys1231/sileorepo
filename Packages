@@ -1,17 +1,36 @@
 Package: re.frida.server
+Architecture: iphoneos-arm
+Version: 16.7.14
+Priority: optional
+Section: Development
+Maintainer: Ole André Vadla Ravnås <oleavr@nowsecure.com>
+Installed-Size: 54576
+Conflicts: re.frida.server64
+Filename: ./pool/frida_16.7.14_iphoneos-arm.deb
+Size: 16844672
+MD5sum: 41fbf55b0ad0a5d771a7ca84944b7cfc
+SHA1: 58b1eac604860b4e2d8bb82a843cc81e6d41962e
+SHA256: 655bd14c24cb5f2dc4df885210f1f4e085e85bb0b173fc913bbaf8467ac4285c
+SHA512: a112227e80e207879323ffeaab534a2e9048d90adcba665fc299bf5861002d93566d0561dcf8dcdaf8c31ee2512540c442db0c49d016ae5ed95ca760ce5a1b97
+Homepage: https://frida.re/
+Description: Observe and reprogram running programs.
+Name: Frida
+Author: Frida Developers <oleavr@nowsecure.com>
+
+Package: re.frida.server
 Architecture: iphoneos-arm64
 Version: 16.7.14
 Priority: optional
 Section: Development
 Maintainer: Ole André Vadla Ravnås <oleavr@nowsecure.com>
-Installed-Size: 54524
+Installed-Size: 54584
 Conflicts: re.frida.server64
-Filename: ./pool/frida-server-iphoneos-arm64.deb
-Size: 16884736
-MD5sum: 67195e8e00f97eeca9a54d7df18fc37a
-SHA1: f2bc955d430c345a81b681508223e314f5b424a2
-SHA256: 0817940dce21db9c1d9b3fdc74675f2478f76c81b6e52816c34d29b5df77ae7f
-SHA512: 7e1e6cadb5f19815a19e0393553127bbc8b3dc7e5e9276db0e64c0d0b17facf92b0fda1a5de66d72f0b3cf88e59610b299907da089bf531820c37c1b1032fb5d
+Filename: ./pool/frida_16.7.14_iphoneos-arm64.deb
+Size: 16845016
+MD5sum: 7bcea72e9a8a43cb0136a7c838a7246e
+SHA1: 22bf84e97d5efaabb6b997296f02b4a723dff72b
+SHA256: 392b8b69bc1639622b39403e606e605160abc3feb5e1b6c0167461c0d7cc47df
+SHA512: 1d5466b52dcffdf1fc1849fb56365c417db61ff14d659efcc81438c857e0f40b5f8af568d10971f1831c5375cad91616f5558ef5cd49ed0550fddd860328ca9b
 Homepage: https://frida.re/
 Description: Observe and reprogram running programs.
 Name: Frida
