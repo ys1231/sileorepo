@@ -4,6 +4,14 @@
 
 # 仓库地址
 
+## 国内仓库地址
+
 ```shell
 https://pfile.ys1231.cn/sileorepo/
+```
+
+## 国外仓库地址
+
+```shell
+https://sileorepo.ys1231.cn/
 ```
