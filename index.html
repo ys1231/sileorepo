@@ -156,21 +156,21 @@
         <p class="subtitle" data-cn="选择下方平台添加仓库源" data-en="Select a platform below to add repository">选择下方平台添加仓库源</p>
         
         <div class="repo-buttons">
-            <a href="cydia://url/https://cydia.saurik.com/api/share#?source=https://pfile.ys1231.cn/sileorepo/" class="repo-button">
+            <a href="cydia://url/https://cydia.saurik.com/api/share#?source=https://pfile.ys1231.cn/sileorepo/" class="repo-button" data-cn-href="cydia://url/https://cydia.saurik.com/api/share#?source=https://pfile.ys1231.cn/sileorepo/" data-en-href="cydia://url/https://cydia.saurik.com/api/share#?source=https://sileorepo.ys1231.cn/">
                 <svg viewBox="0 0 24 24" fill="currentColor">
                     <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M16.2,16.2L11,13V7H12.5V12.2L17,14.9L16.2,16.2Z" />
                 </svg>
                 <span data-cn="添加到 Cydia" data-en="Add to Cydia">添加到 Cydia</span>
             </a>
             
-            <a href="sileo://source/https://pfile.ys1231.cn/sileorepo/" class="repo-button">
+            <a href="sileo://source/https://pfile.ys1231.cn/sileorepo/" class="repo-button" data-cn-href="sileo://source/https://pfile.ys1231.cn/sileorepo/" data-en-href="sileo://source/https://sileorepo.ys1231.cn/">
                 <svg viewBox="0 0 24 24" fill="currentColor">
                     <path d="M12,1.75L5.75,12.25L12,16L18.25,12.25L12,1.75M5.75,14.5L5.75,20L12,23.25L18.25,20V14.5L12,18.25L5.75,14.5Z" />
                 </svg>
                 <span data-cn="添加到 Sileo" data-en="Add to Sileo">添加到 Sileo</span>
             </a>
             
-            <a href="zbra://sources/add/https://pfile.ys1231.cn/sileorepo/" class="repo-button">
+            <a href="zbra://sources/add/https://pfile.ys1231.cn/sileorepo/" class="repo-button" data-cn-href="zbra://sources/add/https://pfile.ys1231.cn/sileorepo/" data-en-href="zbra://sources/add/https://sileorepo.ys1231.cn/">
                 <svg viewBox="0 0 24 24" fill="currentColor">
                     <path d="M18,4L14,8H17V18A2,2 0 0,1 15,20A2,2 0 0,1 13,18V8.8C13,7.68 13.96,6.72 15.08,6.72C15.2,6.72 15.31,6.75 15.42,6.77L16,2H12V4H14L13.74,6C13.03,5.84 12.33,5.96 11.8,6.41L10.33,4.28C10.11,4 9.79,3.8 9.44,3.66L8,8H4L3,4H0L4,14L6,8L7,11L8,8L9.33,12.5C9.44,12.83 9.6,13.12 9.81,13.37L10,13.6V18A2,2 0 0,0 12,20A2,2 0 0,0 14,18V16H16A2,2 0 0,0 18,14V8H21M20,6H24V10H20V6Z" />
                 </svg>
@@ -214,6 +214,12 @@
             const elements = document.querySelectorAll('[data-cn][data-en]');
             elements.forEach(element => {
                 element.textContent = element.getAttribute(`data-${lang}`);
+            });
+            
+            // 更新所有链接的 href 属性，根据不同语言使用不同的地址
+            const links = document.querySelectorAll('[data-cn-href][data-en-href]');
+            links.forEach(link => {
+                link.href = link.getAttribute(`data-${lang}-href`);
             });
             
             // 更新 HTML 标签的 lang 属性
