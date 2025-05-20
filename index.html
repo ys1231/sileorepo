@@ -1,11 +1,224 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iyue Repo</title>
+    <style>
+        :root {
+            --primary-color: #4a6cf7;
+            --hover-color: #3d5ef2;
+            --bg-color: #f8f9fa;
+            --text-color: #333;
+            --card-bg: #ffffff;
+            --shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            --secondary-color: #6c757d;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary-color: #5d80ff;
+                --hover-color: #6e8cff;
+                --bg-color: #121212;
+                --text-color: #f0f0f0;
+                --card-bg: #1e1e1e;
+                --shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+                --secondary-color: #adb5bd;
+            }
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .container {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            width: 100%;
+            max-width: 500px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: #888;
+        }
+        
+        .repo-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .repo-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.2s ease;
+        }
+        
+        .repo-button:hover {
+            background-color: var(--hover-color);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(74, 108, 247, 0.3);
+        }
+        
+        .repo-button svg {
+            margin-right: 10px;
+            width: 24px;
+            height: 24px;
+        }
+        
+        footer {
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: #888;
+        }
+        
+        /* 语言切换按钮样式 */
+        .lang-switch {
+            position: fixed;
+            top: 15px;
+            right: 15px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            border-radius: 20px;
+            padding: 5px 15px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .lang-switch:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .lang-switch {
+                padding: 4px 10px;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
 
 <body>
-	<h1>iyue Repo</h1>
-	<a href="cydia://url/https://cydia.saurik.com/api/share#?source=https://pfile.ys1231.cn/sileorepo/">Add to Cydia</a><br><br>
-	<a href="sileo://source/https://pfile.ys1231.cn/sileorepo/">Add to Sileo</a><br><br>
-	<a href="zbra://sources/add/https://pfile.ys1231.cn/sileorepo/">Add to Zebra</a>
+    <button class="lang-switch" onclick="toggleLanguage()" id="langToggle">English</button>
+    <div class="container">
+        <h1>iyue Repo</h1>
+        <p class="subtitle" data-cn="选择下方平台添加仓库源" data-en="Select a platform below to add repository">选择下方平台添加仓库源</p>
+        
+        <div class="repo-buttons">
+            <a href="cydia://url/https://cydia.saurik.com/api/share#?source=https://pfile.ys1231.cn/sileorepo/" class="repo-button">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M16.2,16.2L11,13V7H12.5V12.2L17,14.9L16.2,16.2Z" />
+                </svg>
+                <span data-cn="添加到 Cydia" data-en="Add to Cydia">添加到 Cydia</span>
+            </a>
+            
+            <a href="sileo://source/https://pfile.ys1231.cn/sileorepo/" class="repo-button">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12,1.75L5.75,12.25L12,16L18.25,12.25L12,1.75M5.75,14.5L5.75,20L12,23.25L18.25,20V14.5L12,18.25L5.75,14.5Z" />
+                </svg>
+                <span data-cn="添加到 Sileo" data-en="Add to Sileo">添加到 Sileo</span>
+            </a>
+            
+            <a href="zbra://sources/add/https://pfile.ys1231.cn/sileorepo/" class="repo-button">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18,4L14,8H17V18A2,2 0 0,1 15,20A2,2 0 0,1 13,18V8.8C13,7.68 13.96,6.72 15.08,6.72C15.2,6.72 15.31,6.75 15.42,6.77L16,2H12V4H14L13.74,6C13.03,5.84 12.33,5.96 11.8,6.41L10.33,4.28C10.11,4 9.79,3.8 9.44,3.66L8,8H4L3,4H0L4,14L6,8L7,11L8,8L9.33,12.5C9.44,12.83 9.6,13.12 9.81,13.37L10,13.6V18A2,2 0 0,0 12,20A2,2 0 0,0 14,18V16H16A2,2 0 0,0 18,14V8H21M20,6H24V10H20V6Z" />
+                </svg>
+                <span data-cn="添加到 Zebra" data-en="Add to Zebra">添加到 Zebra</span>
+            </a>
+        </div>
+        
+        <footer>
+            © 2025 iyue Repo - <span data-cn="让越狱更简单" data-en="Making jailbreak easier">让越狱更简单</span>
+        </footer>
+    </div>
+    <script>
+        // 当前语言状态，默认为中文
+        let currentLang = 'cn';
+        
+        // 页面加载后检查是否有保存的语言设置
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('language');
+            if (savedLang === 'en') {
+                setLanguage('en');
+            }
+        });
+        
+        // 切换语言函数
+        function toggleLanguage() {
+            const newLang = currentLang === 'cn' ? 'en' : 'cn';
+            setLanguage(newLang);
+        }
+        
+        // 设置语言函数
+        function setLanguage(lang) {
+            currentLang = lang;
+            
+            // 保存语言设置到本地存储
+            localStorage.setItem('language', lang);
+            
+            // 更新按钮文本
+            document.getElementById('langToggle').textContent = lang === 'cn' ? 'English' : '中文';
+            
+            // 更新所有带有 data-cn 和 data-en 属性的元素
+            const elements = document.querySelectorAll('[data-cn][data-en]');
+            elements.forEach(element => {
+                element.textContent = element.getAttribute(`data-${lang}`);
+            });
+            
+            // 更新 HTML 标签的 lang 属性
+            document.documentElement.lang = lang === 'cn' ? 'zh-CN' : 'en';
+        }
+    </script>
 </body>
-
 </html>
